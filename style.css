@@ -1,12 +1,79 @@
-78% of storage used … You use storage when you save to Drive, back up to Google Photos, and send and receive email on Gmail
-body {
-  font-family: "Muli-Regular";
-  color: #666;
-  font-size: 13px;
+:root{
+  --main-color:#00c9a5;
+  --nav-color:#00afa5;
+  --bg-color:#e8f3f1;
+  --black:#2f4858;
+}
+*{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  text-transform: capitalize;
   margin: 0;
-  background: #080808}
+  padding: 0;
+  
+}
+
+header {
+   background-color: #918888;
+   text-align: center;
+   padding: 0px;
+   margin: 0px;
 
 
+
+}
+
+.navbar .navicon{
+  justify-content: space-between;
+  align-items: baseline;
+  color: #8d928e;
+  text-decoration: none;
+  padding: 0px;
+  display: flex;
+  text-align: center;
+  background-color: #e6f3ea;
+  margin: 0;
+
+}
+.navbar .navicon:hover{
+  background-color: #3d3d3c;
+
+  }
+.logo {
+  max-width: 100%; /* Make the logo responsive */
+  height: auto;
+}
+
+.logo img {
+  max-height: 180px; /* Adjust as needed */
+  border: none;
+  background-color: #101110;
+  padding: 0;
+}
+
+
+/* Add media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .menu {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      align-items: flex-start; /* Align items to the start on smaller screens */
+  }
+
+  .rightside {
+      margin-top: 10px; /* Add some space between logo and navigation on smaller screens */
+  }
+
+  .menubar {
+      display: none; /* Hide the menu bar lines on smaller screens */
+  }
+}
+.leftside img {
+  width: auto;     /* Maintain the aspect ratio */
+  max-height: 800px; /* Set the maximum height of the logo */
+}
   .social-icons a {
     scroll-margin-right: 5px;
   }
@@ -16,12 +83,13 @@ body {
 }
 
 .zoom-in {
-  transition: transform 0.3s ease-in;
+  transition: transform 0.1s ease-in;
 }
 
 .zoom-in:hover {
   transform: scale(1.1); /* You can adjust the scale value based on your preference */
 }
+
 
 .Gallery-id {
   overflow: hidden;
