@@ -56,7 +56,11 @@ header {
 
 
 /* Add media query for smaller screens */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
+  menu, header, footer, section, gallery{
+
+    width: 100%;
+  }
   .menu {
       flex-direction: column; /* Stack items vertically on smaller screens */
       align-items: flex-start; /* Align items to the start on smaller screens */
