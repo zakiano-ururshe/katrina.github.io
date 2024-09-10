@@ -1,254 +1,278 @@
-:root{
-  --main-color:#00c9a5;
-  --nav-color:#00afa5;
-  --bg-color:#e8f3f1;
-  --black:#2f4858;
+:root {
+  --main-color: #00c9a5;
+  --nav-color: hsl(106, 80%, 53%);
+  --bg-color: #e8f3f1;
+  --black: #2f4858;
+  --highlight-color: #FF9800;
+  --font-color: #333;
 }
-*{
+
+* {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   border: none;
   outline: none;
   text-decoration: none;
   text-transform: capitalize;
-  margin: 0;
-  padding: 0;
-  
 }
 
-header {
-   background-color: #918888;
-   text-align: center;
-   padding: 0px;
-   margin: 0px;
-
-
-
-}
-
-.navbar .navicon{
-  justify-content: space-between;
-  align-items: baseline;
-  color: #8d928e;
-  text-decoration: none;
-  padding: 0px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
-  text-align: center;
-  background-color: #e6f3ea;
-  margin: 0;
-
+  justify-content: space-between;
+  align-items: center;
 }
-.navbar .navicon:hover{
-  background-color: #3d3d3c;
 
-  }
+.navbar {
+  background-color: rgb(194, 212, 224);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 130px;
+}
+
 .logo {
-  max-width: 100%; /* Make the logo responsive */
+  width: 350px;
   height: auto;
 }
 
 .logo img {
-  max-height: 180px; /* Adjust as needed */
+  max-height: 180px;
   border: none;
-  background-color: #101110;
-  padding: 0;
+  background-color: #6d82ec;
+  background: none;
+  border-radius: 0;
 }
 
-
-/* Add media query for smaller screens */
-@media only screen and (max-width: 600px) {
-  menu, header, footer, section, gallery{
-
-    width: 100%;
-  }
-  .menu {
-      flex-direction: column; /* Stack items vertically on smaller screens */
-      align-items: flex-start; /* Align items to the start on smaller screens */
-  }
-
-  .rightside {
-      margin-top: 10px; /* Add some space between logo and navigation on smaller screens */
-  }
-
-  .menubar {
-      display: none; /* Hide the menu bar lines on smaller screens */
-  }
+.nav-links {
+  list-style: none;
+  display: flex;
 }
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  color: var(--font-color);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 0;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: var(--highlight-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.cta a {
+  background-color: var(--highlight-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+}
+
+.cta a:hover {
+  background-color: #e68a00;
+}
+
+header {
+  background-color: #918888;
+  text-align: center;
+}
+
+.navicon {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: #8d928e;
+  background-color: #e6f3ea;
+}
+
+.navicon:hover {
+  background-color: #3d3d3c;
+}
+
 .leftside img {
-  width: auto;     /* Maintain the aspect ratio */
-  max-height: 800px; /* Set the maximum height of the logo */
-}
-  .social-icons a {
-    scroll-margin-right: 5px;
-  }
-
-  .Bakery-menu {
-    overflow: hidden;
+  width: auto;
+  max-height: 800px;
 }
 
-.zoom-in {
-  transition: transform 0.1s ease-in;
+.social-icons a {
+  scroll-margin-right: 5px;
 }
 
-.zoom-in:hover {
-  transform: scale(1.1); /* You can adjust the scale value based on your preference */
-}
-
-
+.Bakery-menu,
 .Gallery-id {
   overflow: hidden;
   transition: transform 0.3s ease-in;
 }
 
-.Gallery-id:hover {
-  transform: scale(1.1); /* You can adjust the scale value based on your preference */
+.Gallery-id:hover,
+.zoom-in:hover {
+  transform: scale(1.1);
 }
 
-/* WhatsApp floating button */
-/* WhatsApp floating button */
 .whatsapp_float {
   position: fixed;
-  bottom: 180px; /* Adjust the distance from the bottom as needed */
-  right: 50px; /* Adjust the distance from the right as needed */
-  z-index: 1000; /* Ensure the button is on top of other elements */
-  background-color: #25d366; /* WhatsApp green color */
+  bottom: 180px;
+  right: 50px;
+  z-index: 1000;
+  background-color: #25d366;
   padding: 10px;
   border-radius: 50%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
-  color: #fff; /* Text color */
+  color: #fff;
   transition: background-color 0.3s ease;
 }
 
 .whatsapp_float:hover {
-  background-color: #128C7E; /* Change color on hover */
+  background-color: #128C7E;
 }
 
-/* Adjust the size of the WhatsApp icon */
 .whatsapp_float svg {
-  width: 34px; /* Adjust the width as needed */
-  height: 34px; /* Adjust the height as needed */
+  width: 34px;
+  height: 34px;
 }
 
 input, textarea, select, button {
   font-family: "Muli-Regular";
-  color: #333;
-  font-size: 13px; }
-
-p, h1, h2, h3, h4, h5, h6, ul {
-  margin: 0; }
-
-img {
-  max-width: 100%; }
+  color: var(--font-color);
+  font-size: 13px;
+}
 
 ul {
   padding-left: 0;
-  margin-bottom: 0; }
+}
 
-a:hover {
-  text-decoration: none; }
-
-:focus {
-  outline: none; }
+img {
+  max-width: 100%;
+}
 
 .wrapper {
   min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
 }
 
 .inner {
-  min-width: 850px;
   text-align: center;
   margin: auto;
   padding-bottom: 48px;
- }
-  .inner h3 {
-    text-transform: uppercase;
-    font-size: 22px;
-    font-family: "Muli-Bold";
-    text-align: center;
-    margin-bottom: 32px;
-    color: #333;
-    letter-spacing: 2px; }
+}
+
+.inner h3 {
+  font-size: 22px;
+  font-family: "Muli-Bold";
+  margin-bottom: 32px;
+  color: var(--font-color);
+  letter-spacing: 2px;
+}
 
 form {
   width: 50%;
-  padding-left: 45px; }
+  padding-left: 45px;
+}
 
 .form-group {
-  display: flex; 
+  display: flex;
 }
-
-  .form-group .form-wrapper {
-  width: 50%; }
 
 .form-wrapper {
-  margin-bottom: 17px; 
+  width: 50%;
   margin: 0 100px;
 }
-  .form-wrapper label {
-    text-align: left;
-    margin-bottom: 9px;
-    display: block; }
+
+.form-wrapper label {
+  text-align: left;
+  margin-bottom: 9px;
+  display: block;
+}
 
 .form-control {
   border: 1px solid #ccc;
-  display: block;
   width: 100%;
   height: 40px;
   padding: 0 20px;
   border-radius: 20px;
   font-family: "Muli-Bold";
-  background: none; }
-  .form-control:focus {
-    border: 1px solid #ffc722; }
+  background: none;
+}
+
+.form-control:focus {
+  border: 1px solid #ffc722;
+}
 
 select {
   -moz-appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
-  padding-left: 20px; }
-  select option[value=""][disabled] {
-    display: none; }
+  padding-left: 20px;
+}
 
-.inner a{
+select option[value=""][disabled] {
+  display: none;
+}
+
+.inner a {
   padding: 10px 25px;
-    background-color: #ffc722;
-    color: rgba(0,0,0,0.8);
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 15px;
-    transition: 0.5s;
-    border: none;
-   position: relative;
-   top: 50px;
-   left: 80px;
-    margin: 0 15px;
-  }
-  #login{
-    padding: 10px 60px;
-  }
-.inner a:hover{
+  background-color: #ffc722;
+  color: rgba(0, 0, 0, 0.8);
+  border-radius: 50px;
+  font-size: 15px;
+  transition: 0.5s;
+  position: relative;
+  top: 50px;
+  left: 80px;
+  margin: 0 15px;
+}
+
+.inner a:hover {
   letter-spacing: 2px;
 }
+
 .checkbox {
-  position: relative; }
-  .checkbox label {
-    padding-left: 22px;
-    cursor: pointer; }
-  .checkbox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer; }
-  .checkbox input:checked ~ .checkmark:after {
-    display: block; }
+  position: relative;
+}
+
+.checkbox label {
+  padding-left: 22px;
+  cursor: pointer;
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
 
 .checkmark {
   position: absolute;
@@ -261,35 +285,75 @@ select {
   background-color: #ebebeb;
   border: 1px solid #ccc;
   font-family: Material-Design-Iconic-Font;
-  color: #000;
   font-size: 10px;
-  font-weight: bolder; }
-  .checkmark:after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    content: '\f26b'; }
+  font-weight: bolder;
+  color: #000;
+}
 
-  
+.checkmark:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  content: '\f26b';
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  menu, header, footer, section, gallery {
+    width: 100%;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rightside {
+    margin-top: 10px;
+  }
+
+  .menubar {
+    display: none;
+  }
+}
 
 @media (max-width: 991px) {
   .inner {
-    min-width: 768px; } }
+    min-width: 768px;
+  }
+}
+
 @media (max-width: 767px) {
   .inner {
     min-width: auto;
     background: none;
     padding-top: 0;
-    padding-bottom: 0; }
-
-   
-
+    padding-bottom: 0;
+  }
 
   form {
     width: 100%;
     padding-right: 15px;
-    padding-left: 15px; } }
-
-/*# sourceMappingURL=style.css.map */
+    padding-left: 15px;
+  }
+}
